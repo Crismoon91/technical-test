@@ -1,0 +1,28 @@
+<div class="col">
+  <div class="card bg-light">
+    <img
+    class="card-img-top"
+    src="https://image.tmdb.org/t/p/original/{{ poster_path }}"
+    alt="{{'CARD.IMG_ALT' | translate}}"
+
+    />
+    <div class="card-body">
+      <h5 class="card-title"> {{ title }}</h5>
+      <p class="card-text">{{ 'CARD.RELEASE_DATE' | translate}}: {{ release_date }}</p>
+      <p> {{ 'CARD.AVERAGE_RATING' | translate }}: {{ vote_average }}/10</p>
+      <button
+      type="button"
+      [class.favorite]="isFavorite"
+      (click)="emitMovie()"
+      class="btn btn-primary btn-sm w-100"
+      >
+      {{
+        (isFavorite
+        ? "CARD.DELETE_FAVORITE"
+        : "CARD.ADD_FAVORITE"
+        ) | translate
+      }}
+    </button>
+  </div>
+  </div>
+</div>

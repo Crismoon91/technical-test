@@ -1,0 +1,37 @@
+
+<div class="py-5 text-center container">
+  <h2>{{ "MAIN.TITLE" | translate }}</h2>
+
+  <div class="container">
+    <input
+      type="text"
+      placeholder="{{ 'MAIN.SEARCH.PLACEHOLDER' | translate }}"
+      #query
+    />
+    <button (click)="getMovieByQuery(query.value)">
+      {{ "MAIN.SEARCH.BUTTON" | translate }}
+    </button>
+  </div>
+</div>
+
+<ng-container *ngIf="movieSearch">
+  <div class="py-5 text-center container">
+    <h4>{{ "MAIN.MOVIES_FOUND" | translate }}: {{ search }}</h4>
+
+    <div class="album py-5">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <app-card
+          *ngFor="let movie of movieSearch.results"
+          [poster_path]="movie.poster_path"
+          [title]="movie.title"
+          [release_date]="movie.release_date"
+          [vote_average]="movie.vote_average"
+          [isFavorite]="movie.isFavorite"
+          (sendMovie)="favoriteClick($event)"
+        ></app-card>
+      </div>
+    </div>
+  </div>
+</div>
+</ng-container>

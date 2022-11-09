@@ -1,0 +1,20 @@
+<div class="py-5 text-center container">
+  <h2>{{ "FAVORITES.TITLE" | translate }}</h2>
+  <div *ngIf="favoriteMovies">
+    <div class="album py-5">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <app-card
+            *ngFor="let movie of favoriteMovies"
+            [poster_path]="movie.poster_path"
+            [title]="movie.title"
+            [release_date]="movie.release_date"
+            [vote_average]="movie.vote_average"
+            [isFavorite]="true"
+            (sendMovie)="deleteMovie($event)"
+          ></app-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

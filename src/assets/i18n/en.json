@@ -1,0 +1,27 @@
+{
+  "NAVBAR": {
+    "BUTTONS": {
+       "HOME": "Home",
+       "FAVORITES": "Favorites"
+      }
+  },
+  "MAIN": {
+     "TITLE": "What movies do you like?",
+      "SEARCH": {
+        "PLACEHOLDER": "Search movies",
+        "BUTTON": "Search"
+      },
+      "MOVIES_FOUND": "Movies found"
+  },
+  "CARD": {
+      "TITLE": "Title",
+      "IMG_ALT": "Movie poster",
+      "RELEASE_DATE": "Release date",
+      "AVERAGE_RATING": "Average rating",
+      "ADD_FAVORITE": "Add to favorites",
+      "DELETE_FAVORITE": "Remove from favorites"
+  },
+  "FAVORITES": {
+      "TITLE": "Favorite movies"
+  }
+}
